@@ -1,0 +1,24 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Data</title>
+</head>
+<body>
+    <h1>Booking Data</h1>
+
+    {% for booking in bookings %}
+        <p>Service Type: {{ booking.service_type }}</p>
+        <p>Date: {{ booking.date }}</p>
+        <p>Email: {{ booking.email }}</p>
+        <p>Name: {{ booking.name }}</p>
+        <p>Phone Number: {{ booking.phone_number }}</p>
+        <p>Booking Type: {{ booking.booking_type }}</p>
+        <p>Payment Confirmed: {{ booking.payment_confirmed }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>

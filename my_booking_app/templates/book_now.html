@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+</head>
+<body>
+    <h1>Book Now</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" action="{{ url_for('book_now') }}">
+        {{ form.hidden_tag() }}
+
+        <label for="service_type">Service Type</label>
+        {{ form.service_type(class="form-control", id="service_type") }}
+
+        <label for="date">Date</label>
+        {{ form.date(class="form-control", id="date") }}
+
+        <label for="email">Email</label>
+        {{ form.email(class="form-control", id="email") }}
+
+        <label for="name">Name</label>
+        {{ form.name(class="form-control", id="name") }}
+
+        <label for="phone_number">Phone Number</label>
+        {{ form.phone_number(class="form-control", id="phone_number") }}
+
+        <label for="agree_to_terms">Agree to Terms and Conditions</label>
+        {{ form.agree_to_terms(id="agree_to_terms") }}
+
+        <button type="submit">Book Now</button>
+    </form>
+</body>
+</html>
